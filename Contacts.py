@@ -6,6 +6,8 @@ fake = Faker()
 
 # Construct the BaseContact() class to define a basic contact representation for a card holder.
 # It contains: first name, last name, phone number and e-mail.
+# Additionally, there is also self.label variable, which calculates the length of the label (first name, space and last name).
+# Apart from the basic methods (__init__, __str__ and __repr__) it contains also contact() method.
 class BaseContact():
     def __init__(self, first_name, last_name, phone_number, email):
         self.first_name = first_name
@@ -23,6 +25,8 @@ class BaseContact():
 
 # Construct the BusinessContact() class to define a child class (business) contact representation for a card holder.
 # It contains: all the parent class parameters plus a position and a company name as well as a business phone number.
+# Additionally, there is also self.label variable, which calculates the length of the label (first name, space and last name).
+# Apart from the basic methods (__init__, __str__ and __repr__) it contains also contact() method.
 class BusinessContact(BaseContact):
     def __init__(self, position, company, business_phone, *args, **kwargs):
         super().__init__(*args, **kwargs)
